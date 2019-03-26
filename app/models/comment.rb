@@ -4,6 +4,6 @@ class Comment < ActiveRecord::Base
   accepts_nested_attributes_for :user, reject_if: :all_blank
 
   def user_name
-    self.user.name
+    self.user.username
   end
 end
