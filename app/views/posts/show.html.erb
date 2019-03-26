@@ -22,7 +22,7 @@
 (we'll change this in future lessons to automatically associate the comment with a logged-in user).
 We should also be able to create a new user here and automatically associate it with the post. -->
 <p>
-  <% form_for @post.comments.build do |f| %>
+  <%= form_for @post.comments.build do |f| %>
     <%= f.label "content" %>
     <%= f.text_area :content, id: :comment_content %>
     <%= f.collection_select :user_id, User.all, :id, :username, include_blank: 'Choose user' %>
