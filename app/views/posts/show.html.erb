@@ -1,8 +1,6 @@
 <p>
   <h1><%= @post.title %></h1>
-  <h2><%= @post.categories.map do |cat|
-      cat.name
-     end.join(", ") %>
+  <h2><%= @post.categories.map(&:name).join(", ") %>
   </h2>
 
   <p>
