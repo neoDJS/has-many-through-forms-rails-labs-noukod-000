@@ -19,7 +19,7 @@
   User List:
 <p>
   <% @post.users.each do |u| %>
-      <p><%= u.username %></p>
+      <p><%= link_to u.username, u %></p>
   <% end %>
 </p>
 <!-- A form to add a new comment. The form should have a drop-down menu to select a user
