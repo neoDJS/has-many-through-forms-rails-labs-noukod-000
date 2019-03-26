@@ -10,8 +10,8 @@
 <p>
   <% @post.comments.each do |c| %>
     <p>
-      <p><%= c.content %></p>
-      <h5><%= c.user_name %></h5>
+      <p><%= c.user_name %> says:</p>
+      <h5><%= c.content %></h5>
     </p>
   <% end %>
 </p>
