@@ -2,7 +2,11 @@
   <%= f.label "Title" %>
   <%= f.text_field :title %>
   <%= f.label "Content" %>
+<<<<<<< HEAD
   <%= f.text_area :content, id: :comment_content %>
+=======
+  <%= f.text_area :content %>
+>>>>>>> 8bba8f98e2714fad88d5e0ca111cc7971f3f1449
   <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
   <%= f.fields_for :categories, post.categories.build do |categories_fields| %>
     <%= categories_fields.text_field :name %>
