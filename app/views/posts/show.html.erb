@@ -1,28 +1,32 @@
 <p>
   <h1><%= @post.title %></h1>
+  <h2><%= @post.categories.map(&:name).join(", ") %></h2>
 
   <p>
      <%= @post.content %>
   </p>
 </p>
+
+  Comment List:
 <p>
   <% @post.comments.each do |c| %>
     <p>
-      <p><%= c.content %></p>
-      <h5><%= c.user_name %></h5>
+      <p><%= c.user_name %> says: <%= c.content %></p>
     </p>
   <% end %>
 </p>
+
+  User List:
 <p>
-  <% @post.users.each do |u| %>
-      <p><%= u.username %></p>
+  <% @post.usersU.each do |u| %>
+      <p><%= link_to u.username, u %></p>
   <% end %>
 </p>
 <!-- A form to add a new comment. The form should have a drop-down menu to select a user
 (we'll change this in future lessons to automatically associate the comment with a logged-in user).
 We should also be able to create a new user here and automatically associate it with the post. -->
 <p>
-  <% form_for @post.comments.build do |f| %>
+  <%= form_for @post.comments.build do |f| %>
     <%= f.label "content" %>
     <%= f.text_area :content, id: :comment_content %>
     <%= f.collection_select :user_id, User.all, :id, :username, include_blank: 'Choose user' %>

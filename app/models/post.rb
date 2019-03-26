@@ -12,4 +12,8 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def usersU
+    self.users.uniq
+  end
+
 end
