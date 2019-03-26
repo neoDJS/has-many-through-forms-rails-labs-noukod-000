@@ -1,6 +1,9 @@
 <p>
   <h1><%= @post.title %></h1>
-  <h2><%= @post.categories.join(", ") %></h2>
+  <h2><%= @post.categories.map do |cat| 
+      cat.name
+     end.join(", ") %>
+ </h2>
 
   <p>
      <%= @post.content %>
